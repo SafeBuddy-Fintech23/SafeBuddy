@@ -7,7 +7,7 @@ It should be centered at the middle of the page.
 
 __[Add badges here]__
 
-BNPL Andriod application written in Native Andriod with Kotlin. 
+BNPL Android application written in Native Android with Kotlin. 
 
 ```
 Here is another image place holder for a short demo of our app. could be gif, or screenshots of working app progress.
