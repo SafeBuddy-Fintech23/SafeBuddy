@@ -28,7 +28,12 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFrag.navController
 
 
-        val topLevelDestinations = setOf(R.id.homeFragment, R.id.notificationsFragment, R.id.scanQrFragment, R.id.myProfileFragment, R.id.moreFragment)
+        val topLevelDestinations = setOf(
+            R.id.homeFragment,
+            R.id.notificationsFragment,
+            R.id.myProfileFragment,
+            R.id.moreFragment
+        )
         val appBarConfiguration = AppBarConfiguration(topLevelDestinations)
         toolbar = binding.toolbar
         toolbar.setupWithNavController(navController, appBarConfiguration)

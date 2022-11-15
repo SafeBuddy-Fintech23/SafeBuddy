@@ -5,26 +5,22 @@
         <item
             android:id="@+id/homeFragment"
             android:icon="@drawable/ic_round_home_24"
-            android:title="Home" />
+            android:title="@string/home" />
 
         <item
             android:id="@+id/notificationsFragment"
             android:icon="@drawable/ic_round_notifications_24"
-            android:title="Notifications" />
-
-        <item
-            android:id="@+id/scanQrFragment"
-            android:icon="@drawable/ic_round_qr_code_scanner_24"
-            android:title="Scan QR" />
+            android:title="@string/notifications" />
 
         <item
             android:id="@+id/myProfileFragment"
             android:icon="@drawable/ic_round_account_box_24"
-            android:title="My profile" />
+            android:title="@string/my_profile" />
 
         <item
             android:id="@+id/moreFragment"
             android:icon="@drawable/ic_baseline_more_24"
-            android:title="More" />
-    </group>
+            android:title="@string/more" />
+    </group
+        >
 </menu>
