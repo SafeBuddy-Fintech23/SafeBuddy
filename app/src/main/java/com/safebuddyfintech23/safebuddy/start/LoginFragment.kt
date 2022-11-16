@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.safebuddyfintech23.safebuddy.R
 
+/**
+ * This class handles the authentication of users.
+ */
+
 class LoginFragment : Fragment() {
 
     override fun onCreateView(

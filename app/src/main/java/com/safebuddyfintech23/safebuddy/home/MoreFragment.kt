@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.safebuddyfintech23.safebuddy.R
 
+/**
+ * Additional information can be put in this section
+ */
+
 class MoreFragment : Fragment() {
 
     override fun onCreateView(

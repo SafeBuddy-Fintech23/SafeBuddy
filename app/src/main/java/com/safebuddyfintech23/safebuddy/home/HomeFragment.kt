@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.safebuddyfintech23.safebuddy.R
 
+/**
+ * Installments get to be handled here.
+ */
+
 class HomeFragment : Fragment() {
 
     override fun onCreateView(

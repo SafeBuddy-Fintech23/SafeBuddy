@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.safebuddyfintech23.safebuddy.R
 
+/**
+ * Shows user profile and any other information related to the user.
+ */
+
 class MyProfileFragment : Fragment() {
 
     override fun onCreateView(

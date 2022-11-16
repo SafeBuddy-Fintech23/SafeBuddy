@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.safebuddyfintech23.safebuddy.R
 
+/**
+ * In this fragment; we introduce the user to the app.
+ * The dependency to be used here is AppIntro : https://github.com/AppIntro/AppIntro
+ */
 class OnBoardingFragment : Fragment() {
 
     override fun onCreateView(
