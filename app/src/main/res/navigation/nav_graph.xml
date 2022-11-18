@@ -25,14 +25,4 @@
         android:name="com.safebuddyfintech23.safebuddy.home.MoreFragment"
         android:label="@string/more"
         tools:layout="@layout/fragment_more" />
-    <fragment
-        android:id="@+id/onBoardingFragment"
-        android:name="com.safebuddyfintech23.safebuddy.start.OnBoardingFragment"
-        android:label="fragment_on_boarding"
-        tools:layout="@layout/fragment_on_boarding" />
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.safebuddyfintech23.safebuddy.start.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
 </navigation>

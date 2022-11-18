@@ -1,6 +1,7 @@
 package com.safebuddyfintech23.safebuddy
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -39,5 +40,17 @@ class MainActivity : AppCompatActivity() {
         toolbar.setupWithNavController(navController, appBarConfiguration)
         bottomNavView.setupWithNavController(navController)
 
+
+        // Only show the bottom navigation view when the current destination is
+        // [fragments at the home screen]
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> bottomNavView.visibility = View.VISIBLE
+                R.id.notificationsFragment -> bottomNavView.visibility = View.VISIBLE
+                R.id.myProfileFragment -> bottomNavView.visibility = View.VISIBLE
+                R.id.moreFragment -> bottomNavView.visibility = View.VISIBLE
+                else -> bottomNavView.visibility = View.GONE
+            }
+        }
     }
 }
