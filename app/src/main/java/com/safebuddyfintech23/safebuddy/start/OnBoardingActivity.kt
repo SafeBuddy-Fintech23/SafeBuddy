@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import com.github.appintro.AppIntro2
 import com.github.appintro.AppIntroFragment
 import com.github.appintro.AppIntroPageTransformerType
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.safebuddyfintech23.safebuddy.MainActivity
 import com.safebuddyfintech23.safebuddy.R
 
 /**
@@ -21,6 +24,9 @@ class OnBoardingActivity : AppIntro2() {
             /**
              * Shared pref: Bool to be used here to check if it is first time using the app
              */
+            if (Firebase.auth.currentUser != null) {
+                goToMainActivity()
+            }
 
             // Call addSlide passing your Fragments.
             // You can use AppIntroFragment to use a pre-built fragment
@@ -86,6 +92,11 @@ class OnBoardingActivity : AppIntro2() {
 
     private fun goToLoginActivity() {
         startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+    }
+
+    private fun goToMainActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }
