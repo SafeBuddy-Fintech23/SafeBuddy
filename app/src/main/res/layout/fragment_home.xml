@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txt_daynight_greetings_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -40,12 +40,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+        app:layout_constraintBottom_toBottomOf="@+id/txt_username_home"
+        app:layout_constraintStart_toEndOf="@+id/txt_username_home"
+        app:layout_constraintTop_toTopOf="@+id/txt_username_home" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_username_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/img_userprofile_home"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:contentDescription="@string/user_profile_picture"
@@ -147,7 +147,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/txt_due_amount_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -165,11 +165,22 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/amount_paid"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintStart_toStartOf="@+id/txt_due_amount_home"
+                app:layout_constraintTop_toBottomOf="@+id/txt_due_amount_home" />
+
+            <TextView
+                android:id="@+id/txt_amount_paid_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_00_00"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintStart_toEndOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="@+id/textView11" />
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/pgbr_amount_paid_home"
                 style="@android:style/Widget.Material.ProgressBar.Horizontal"
                 android:layout_width="0dp"
                 android:layout_height="12dp"
@@ -187,7 +198,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/txt_upcoming_recent_home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -195,12 +206,13 @@
         android:text="@string/your_upcoming_and_recent_installments_will_live_here"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="20sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/img_empty_holder_home"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -210,8 +222,10 @@
         android:importantForAccessibility="no"
         android:scaleType="fitXY"
         android:src="@drawable/img_no_events_holder"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_upcoming_recent_home"
+        tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

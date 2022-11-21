@@ -29,7 +29,7 @@
     <string name="day_night_greetings">Day/Night greetings</string>
     <string name="total_due_payment">Total due payment</string>
     <string name="_00_00">$00.00</string>
-    <string name="amount_paid">Amount paid</string>
+    <string name="amount_paid">Amount paid:</string>
     <string name="card_background_image">Card background image</string>
     <string name="your_upcoming_and_recent_installments_will_live_here">Your upcoming and recent installments will live here ⛺</string>
     <string name="safe_buddy_logo">Safe Buddy logo</string>
