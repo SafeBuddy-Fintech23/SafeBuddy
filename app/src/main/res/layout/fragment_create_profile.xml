@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/second_name"
+        android:hint="@string/last_name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"

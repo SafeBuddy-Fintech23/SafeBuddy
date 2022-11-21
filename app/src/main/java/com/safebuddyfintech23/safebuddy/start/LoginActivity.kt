@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
             //AuthUI.IdpConfig.GitHubBuilder().build(),
             AuthUI.IdpConfig.EmailBuilder().build(),
         )
+
         if (Firebase.auth.currentUser == null) {
             val loginIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()

@@ -45,10 +45,24 @@ class MainActivity : AppCompatActivity() {
         // [fragments at the home screen]
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.homeFragment -> bottomNavView.visibility = View.VISIBLE
-                R.id.notificationsFragment -> bottomNavView.visibility = View.VISIBLE
-                R.id.myProfileFragment -> bottomNavView.visibility = View.VISIBLE
-                R.id.moreFragment -> bottomNavView.visibility = View.VISIBLE
+                R.id.homeFragment -> {
+                    bottomNavView.visibility = View.VISIBLE
+                    //when at homeFragment, also hide the [toolbar]
+                    toolbar.visibility = View.GONE
+                }
+                R.id.notificationsFragment -> {
+                    bottomNavView.visibility = View.VISIBLE
+                    //when at notificationsFragment, also show the [toolbar]
+                    toolbar.visibility = View.VISIBLE
+                }
+                R.id.myProfileFragment -> {
+                    bottomNavView.visibility = View.VISIBLE
+                    toolbar.visibility = View.VISIBLE
+                }
+                R.id.moreFragment -> {
+                    bottomNavView.visibility = View.VISIBLE
+                    toolbar.visibility = View.VISIBLE
+                }
                 else -> bottomNavView.visibility = View.GONE
             }
         }

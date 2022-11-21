@@ -15,11 +15,22 @@
     <string name="first_name">First Name</string>
     <string name="user_profile_picture">User profile picture</string>
     <string name="set_profile_picture">Set profile picture</string>
-    <string name="second_name">Second Name</string>
+    <string name="last_name">Last Name</string>
     <string name="btn_continue">Continue</string>
     <string name="need_help_contact_our">Need help? Contact our</string>
     <string name="customer_support">Customer Support</string>
     <string name="bank_id">Bank ID</string>
 
-
+    <!-- Strings used for home fragment-->
+    <string name="hello">Hello, </string>
+    <string name="safe_buddy_background_image">Safe Buddy background image</string>
+    <string name="username">UserName </string>
+    <string name="emoji_hey">👋</string>
+    <string name="day_night_greetings">Day/Night greetings</string>
+    <string name="total_due_payment">Total due payment</string>
+    <string name="_00_00">$00.00</string>
+    <string name="amount_paid">Amount paid</string>
+    <string name="card_background_image">Card background image</string>
+    <string name="your_upcoming_and_recent_installments_will_live_here">Your upcoming and recent installments will live here ⛺</string>
+    <string name="safe_buddy_logo">Safe Buddy logo</string>
 </resources>
