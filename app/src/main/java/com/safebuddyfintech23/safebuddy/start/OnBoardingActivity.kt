@@ -21,9 +21,7 @@ class OnBoardingActivity : AppIntro2() {
             super.onCreate(savedInstanceState)
             // Make sure you don't call setContentView!
 
-            /**
-             * Shared pref: Bool to be used here to check if it is first time using the app
-             */
+            // if the user is signed in, go to main activity
             if (Firebase.auth.currentUser != null) {
                 goToMainActivity()
             }
