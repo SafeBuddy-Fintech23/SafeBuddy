@@ -1,3 +1,4 @@
 <resources>
     <dimen name="fab_margin">200dp</dimen>
+    <dimen name="input_txt_corner_Radius">26dp</dimen>
 </resources>

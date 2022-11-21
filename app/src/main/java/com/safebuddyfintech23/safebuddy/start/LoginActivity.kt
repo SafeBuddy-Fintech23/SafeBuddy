@@ -33,18 +33,19 @@ class LoginActivity : AppCompatActivity() {
     public override fun onStart() {
         super.onStart()
 
+        val providers = listOf(
+            AuthUI.IdpConfig.GoogleBuilder().build(),
+            //AuthUI.IdpConfig.AppleBuilder().build(),
+            //AuthUI.IdpConfig.GitHubBuilder().build(),
+            AuthUI.IdpConfig.EmailBuilder().build(),
+        )
         if (Firebase.auth.currentUser == null) {
             val loginIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setLogo(R.drawable.image_for_login)
                 .setTheme(R.style.Theme_SafeBuddy)
                 .setAvailableProviders(
-                    listOf(
-                        AuthUI.IdpConfig.GoogleBuilder().build(),
-                        AuthUI.IdpConfig.AppleBuilder().build(),
-                        AuthUI.IdpConfig.GitHubBuilder().build(),
-                        AuthUI.IdpConfig.EmailBuilder().build()
-                    )
+                    providers
                 )
                 .build()
 
