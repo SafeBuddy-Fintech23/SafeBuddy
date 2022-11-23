@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         val topLevelDestinations = setOf(
             R.id.homeFragment,
             R.id.notificationsFragment,
+            R.id.storesFragment,
             R.id.myProfileFragment,
             R.id.moreFragment
         )
@@ -56,6 +57,10 @@ class MainActivity : AppCompatActivity() {
                     toolbar.visibility = View.VISIBLE
                 }
                 R.id.myProfileFragment -> {
+                    bottomNavView.visibility = View.VISIBLE
+                    toolbar.visibility = View.VISIBLE
+                }
+                R.id.storesFragment -> {
                     bottomNavView.visibility = View.VISIBLE
                     toolbar.visibility = View.VISIBLE
                 }

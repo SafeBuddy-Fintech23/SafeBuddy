@@ -25,4 +25,9 @@
         android:name="com.safebuddyfintech23.safebuddy.home.MoreFragment"
         android:label="@string/more"
         tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/storesFragment"
+        android:name="com.safebuddyfintech23.safebuddy.home.StoresFragment"
+        android:label="@string/store"
+        tools:layout="@layout/fragment_stores" />
 </navigation>

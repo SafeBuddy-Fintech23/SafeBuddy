@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "171143998905",
+    "project_id": "safe-buddy-ea8b1",
+    "storage_bucket": "safe-buddy-ea8b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171143998905:android:2cf95c8e355d90e0d5da68",
+        "android_client_info": {
+          "package_name": "com.safebuddyfintech23.safebuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171143998905-2s59khgq9sghr963rao3114g2a5e5ni8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.safebuddyfintech23.safebuddy",
+            "certificate_hash": "6b383dfaa211b8a19cdb0ba508051a3bff61ab47"
+          }
+        },
+        {
+          "client_id": "171143998905-v07ugj46tm21cv9ar87edpb70ram7piq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkFbCd4paSXLBqxHXPmxheJYy83srRog0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171143998905-v07ugj46tm21cv9ar87edpb70ram7piq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

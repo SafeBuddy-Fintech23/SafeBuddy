@@ -23,6 +23,8 @@ class HomeFragment : Fragment() {
     private lateinit var duePayment: TextView
     private lateinit var amountPaid: TextView
     private lateinit var amountPaidProgressBar: ProgressBar
+    private lateinit var viewAllUpcoming: TextView
+    private lateinit var viewAllPrevious: TextView
     private lateinit var upcomingRecentTxt: TextView
     private lateinit var emptyActivityHolderImg: ImageView
 
@@ -44,6 +46,8 @@ class HomeFragment : Fragment() {
         duePayment = view.findViewById(R.id.txt_due_amount_home)
         amountPaid = view.findViewById(R.id.txt_amount_paid_home)
         amountPaidProgressBar = view.findViewById(R.id.pgbr_amount_paid_home)
+        viewAllUpcoming = view.findViewById(R.id.txt_viewall_upcoming_home)
+        viewAllPrevious = view.findViewById(R.id.txt_viewall_previous_home)
         /*these last two view must be visible when the user has no upcoming or
         recent installments. Since these views take huge space in the screen, I have
         set their visibility to View.GONE in the layout file.

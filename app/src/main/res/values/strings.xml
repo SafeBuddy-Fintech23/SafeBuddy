@@ -5,6 +5,7 @@
     <!-- Strings used for the bottom nav view -->
     <string name="home">Home</string>
     <string name="notifications">Notifications</string>
+    <string name="store">Stores</string>
     <string name="my_profile">My profile</string>
     <string name="more">More</string>
 
@@ -33,4 +34,17 @@
     <string name="card_background_image">Card background image</string>
     <string name="your_upcoming_and_recent_installments_will_live_here">Your upcoming and recent installments will live here ⛺</string>
     <string name="safe_buddy_logo">Safe Buddy logo</string>
+    <string name="upcoming_installments">Upcoming Installments</string>
+    <string name="view_all">View all</string>
+    <string name="previous_installments">Previous installments</string>
+
+    <!-- Strings used for list_item_installments_home-->
+    <string name="product_name">Product Name</string>
+    <string name="installments">Installments</string>
+    <string name="zero_over_zero">00/00</string>
+    <string name="last_pay">Last Payment</string>
+    <string name="_12_12_2022">12/12/2022</string>
+    <string name="product_tag">Product Tag</string>
+    <string name="more_information">More information</string>
+
 </resources>
