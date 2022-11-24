@@ -47,4 +47,15 @@
     <string name="product_tag">Product Tag</string>
     <string name="more_information">More information</string>
 
+    <!-- Strings used for stores fragment-->
+    <string name="store_name">Store Name</string>
+    <string name="store_logo_image">Store logo image</string>
+    <!-- store names-->
+    <string name="jumia">Jumia</string>
+    <string name="amazon">Amazon</string>
+    <string name="ebay">eBay</string>
+    <string name="aliexpress">Aliexpress</string>
+    <string name="shopify">Shopify</string>
+
+
 </resources>
