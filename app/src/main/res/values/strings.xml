@@ -2,6 +2,12 @@
     <string name="app_name">Safe Buddy</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- day/night greetings-->
+    <string name="good_morning">Good Morning</string>
+    <string name="good_afternoon">Good Afternoon</string>
+    <string name="good_evening">Good Evening</string>
+
+
     <!-- Strings used for the bottom nav view -->
     <string name="home">Home</string>
     <string name="notifications">Notifications</string>
@@ -10,6 +16,7 @@
     <string name="more">More</string>
 
     <!-- Strings used for create profile fragment-->
+    <string name="create_profile_label">Create Profile</string>
     <string name="buy_now_pay_later">Buy now pay later</string>
     <string name="welcome">Welcome 👋</string>
     <string name="let_s_create_your_profile">Let\'s create your profile.</string>
@@ -57,5 +64,11 @@
     <string name="aliexpress">Aliexpress</string>
     <string name="shopify">Shopify</string>
 
+    <!-- Strings for notifications fragment-->
+    <string name="no_notifications">Your upcoming notifications will be stored here. 📜 </string>
+
+    <!-- String for MyProfile fragment-->
+    <string name="create_profile">Create profile</string>
+    <string name="please_create_your_profile_so_as_to_access_our_services">Please create your profile so as to access our services.</string>
 
 </resources>
