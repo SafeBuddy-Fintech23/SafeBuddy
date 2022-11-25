@@ -38,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
             //AuthUI.IdpConfig.AppleBuilder().build(),
             //AuthUI.IdpConfig.GitHubBuilder().build(),
             AuthUI.IdpConfig.EmailBuilder().build(),
+            AuthUI.IdpConfig.PhoneBuilder().build()
         )
 
         if (Firebase.auth.currentUser == null) {
