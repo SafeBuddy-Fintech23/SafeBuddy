@@ -19,10 +19,43 @@
         android:id="@+id/myProfileFragment"
         android:name="com.safebuddyfintech23.safebuddy.home.MyProfileFragment"
         android:label="@string/my_profile"
-        tools:layout="@layout/fragment_my_profile" />
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.safebuddyfintech23.safebuddy.home.MoreFragment"
         android:label="@string/more"
         tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/storesFragment"
+        android:name="com.safebuddyfintech23.safebuddy.home.stores.StoresFragment"
+        android:label="@string/store"
+        tools:layout="@layout/fragment_stores" />
+    <fragment
+        android:id="@+id/createProfileFragment"
+        android:name="com.safebuddyfintech23.safebuddy.CreateProfileFragment"
+        android:label="@string/create_profile_label"
+        tools:layout="@layout/fragment_create_profile" />
+    <fragment
+        android:id="@+id/upcomingInstallmentsFragment"
+        android:name="com.safebuddyfintech23.safebuddy.installments.UpcomingInstallmentsFragment"
+        android:label="fragment_upcoming_installments"
+        tools:layout="@layout/fragment_upcoming_installments" />
+    <fragment
+        android:id="@+id/itemInstallmentsInfoFragment"
+        android:name="com.safebuddyfintech23.safebuddy.installments.ItemInstallmentsInfoFragment"
+        android:label="fragment_item_installments_info"
+        tools:layout="@layout/fragment_item_installments_info" />
+    <fragment
+        android:id="@+id/previousInstallmentsFragment"
+        android:name="com.safebuddyfintech23.safebuddy.installments.PreviousInstallmentsFragment"
+        android:label="fragment_previous_installments"
+        tools:layout="@layout/fragment_previous_installments" />
 </navigation>

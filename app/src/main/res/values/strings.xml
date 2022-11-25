@@ -2,24 +2,73 @@
     <string name="app_name">Safe Buddy</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- day/night greetings-->
+    <string name="good_morning">Good Morning</string>
+    <string name="good_afternoon">Good Afternoon</string>
+    <string name="good_evening">Good Evening</string>
+
+
     <!-- Strings used for the bottom nav view -->
     <string name="home">Home</string>
     <string name="notifications">Notifications</string>
+    <string name="store">Stores</string>
     <string name="my_profile">My profile</string>
     <string name="more">More</string>
 
     <!-- Strings used for create profile fragment-->
+    <string name="create_profile_label">Create Profile</string>
     <string name="buy_now_pay_later">Buy now pay later</string>
     <string name="welcome">Welcome 👋</string>
     <string name="let_s_create_your_profile">Let\'s create your profile.</string>
     <string name="first_name">First Name</string>
     <string name="user_profile_picture">User profile picture</string>
     <string name="set_profile_picture">Set profile picture</string>
-    <string name="second_name">Second Name</string>
+    <string name="last_name">Last Name</string>
     <string name="btn_continue">Continue</string>
     <string name="need_help_contact_our">Need help? Contact our</string>
     <string name="customer_support">Customer Support</string>
     <string name="bank_id">Bank ID</string>
 
+    <!-- Strings used for home fragment-->
+    <string name="hello">Hello, </string>
+    <string name="safe_buddy_background_image">Safe Buddy background image</string>
+    <string name="username">UserName </string>
+    <string name="emoji_hey">👋</string>
+    <string name="day_night_greetings">Day/Night greetings</string>
+    <string name="total_due_payment">Total due payment</string>
+    <string name="_00_00">$00.00</string>
+    <string name="amount_paid">Amount paid:</string>
+    <string name="card_background_image">Card background image</string>
+    <string name="your_upcoming_and_recent_installments_will_live_here">Your upcoming and recent installments will live here ⛺</string>
+    <string name="safe_buddy_logo">Safe Buddy logo</string>
+    <string name="upcoming_installments">Upcoming Installments</string>
+    <string name="view_all">View all</string>
+    <string name="previous_installments">Previous installments</string>
+
+    <!-- Strings used for list_item_installments_home-->
+    <string name="product_name">Product Name</string>
+    <string name="installments">Installments</string>
+    <string name="zero_over_zero">00/00</string>
+    <string name="last_pay">Last Payment</string>
+    <string name="_12_12_2022">12/12/2022</string>
+    <string name="product_tag">Product Tag</string>
+    <string name="more_information">More information</string>
+
+    <!-- Strings used for stores fragment-->
+    <string name="store_name">Store Name</string>
+    <string name="store_logo_image">Store logo image</string>
+    <!-- store names-->
+    <string name="jumia">Jumia</string>
+    <string name="amazon">Amazon</string>
+    <string name="ebay">eBay</string>
+    <string name="aliexpress">Aliexpress</string>
+    <string name="shopify">Shopify</string>
+
+    <!-- Strings for notifications fragment-->
+    <string name="no_notifications">Your upcoming notifications will be stored here. 📜 </string>
+
+    <!-- String for MyProfile fragment-->
+    <string name="create_profile">Create profile</string>
+    <string name="please_create_your_profile_so_as_to_access_our_services">Please create your profile so as to access our services.</string>
 
 </resources>
