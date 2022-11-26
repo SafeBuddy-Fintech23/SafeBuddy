@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.safebuddyfintech23.safebuddy.R
 
-
+/**
+ * Displays stores to the user, allowing the user to select the preferred store.
+ */
 class StoresFragment : Fragment() {
 
     private lateinit var storesRecyclerView: RecyclerView

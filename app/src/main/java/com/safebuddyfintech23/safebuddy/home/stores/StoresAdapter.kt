@@ -8,6 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.safebuddyfintech23.safebuddy.R
 
+/**
+ * This is the addapter for the recycler view in stores fragment
+ */
 class StoresAdapter(private val storesList: List<StoresModel>) : RecyclerView.Adapter<StoresAdapter.ViewHolder>() {
 
     interface onItemClickListener {

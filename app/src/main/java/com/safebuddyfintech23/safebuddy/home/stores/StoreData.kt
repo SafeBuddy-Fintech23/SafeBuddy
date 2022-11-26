@@ -2,6 +2,9 @@ package com.safebuddyfintech23.safebuddy.home.stores
 
 import com.safebuddyfintech23.safebuddy.R
 
+/**
+ * This class contains data that will be used in the stores package
+ */
 class StoreData {
     fun loadStores(): List<StoresModel> {
         return listOf(
