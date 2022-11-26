@@ -10,6 +10,16 @@ import com.safebuddyfintech23.safebuddy.R
 
 class StoresAdapter(private val storesList: List<StoresModel>) : RecyclerView.Adapter<StoresAdapter.ViewHolder>() {
 
+    interface onItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    private lateinit var mListener: onItemClickListener
+
+    fun setOnItemClickListener(listener: onItemClickListener) {
+        mListener = listener
+    }
+
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
@@ -17,7 +27,7 @@ class StoresAdapter(private val storesList: List<StoresModel>) : RecyclerView.Ad
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_stores, parent, false)
 
-        return ViewHolder(view)
+        return ViewHolder(view, mListener)
     }
 
     // binds the list items to a view
@@ -38,8 +48,13 @@ class StoresAdapter(private val storesList: List<StoresModel>) : RecyclerView.Ad
     }
 
     // Holds the views for adding it to image and text
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    class ViewHolder(ItemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.store_logo)
         val textView: TextView = itemView.findViewById(R.id.store_name)
+
+        //initialize the click on the itemView
+        init {
+            itemView.setOnClickListener { listener.onItemClick(adapterPosition) }
+        }
     }
 }

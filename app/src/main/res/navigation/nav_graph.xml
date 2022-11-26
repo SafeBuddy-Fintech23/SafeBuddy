@@ -37,7 +37,13 @@
         android:id="@+id/storesFragment"
         android:name="com.safebuddyfintech23.safebuddy.home.stores.StoresFragment"
         android:label="@string/store"
-        tools:layout="@layout/fragment_stores" />
+        tools:layout="@layout/fragment_stores" >
+        <action
+            android:id="@+id/action_storesFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
     <fragment
         android:id="@+id/createProfileFragment"
         android:name="com.safebuddyfintech23.safebuddy.CreateProfileFragment"
@@ -58,4 +64,9 @@
         android:name="com.safebuddyfintech23.safebuddy.installments.PreviousInstallmentsFragment"
         android:label="fragment_previous_installments"
         tools:layout="@layout/fragment_previous_installments" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.safebuddyfintech23.safebuddy.home.stores.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
 </navigation>

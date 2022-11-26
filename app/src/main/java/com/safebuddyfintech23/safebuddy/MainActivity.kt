@@ -68,6 +68,10 @@ class MainActivity : AppCompatActivity() {
                     bottomNavView.visibility = View.VISIBLE
                     toolbar.visibility = View.VISIBLE
                 }
+                //hide toolbar from the user
+                R.id.webViewFragment -> {
+                    toolbar.visibility = View.GONE
+                }
                 else -> bottomNavView.visibility = View.GONE
             }
         }

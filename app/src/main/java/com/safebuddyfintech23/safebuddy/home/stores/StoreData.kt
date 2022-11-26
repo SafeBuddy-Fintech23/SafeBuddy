@@ -9,7 +9,29 @@ class StoreData {
             StoresModel(R.drawable.amazon_logo, R.string.amazon),
             StoresModel(R.drawable.ebay_logo, R.string.ebay),
             StoresModel(R.drawable.aliexpress_logo, R.string.aliexpress),
-            StoresModel(R.drawable.shopify_logo, R.string.shopify),
+            //StoresModel(R.drawable.shopify_logo, R.string.shopify),
+        )
+    }
+
+    //stores website links
+    fun loadWebsites(): List<String> {
+        return listOf(
+            "https://www.jumia.com/",
+            "https://www.amazon.com/",
+            "https://www.ebay.com/",
+            "https://www.aliexpress.com/",
+            //StoresWebLink("https://www.shopify.com/"),
+        )
+    }
+
+    //titles for the webview fragment
+    fun loadTitles(): List<String> {
+        return listOf(
+            "Jumia",
+            "Amazon",
+            "eBay",
+            "AliExpress",
+            //Shopify,
         )
     }
 }

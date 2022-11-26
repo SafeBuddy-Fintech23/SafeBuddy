@@ -61,7 +61,7 @@
     <string name="jumia">Jumia</string>
     <string name="amazon">Amazon</string>
     <string name="ebay">eBay</string>
-    <string name="aliexpress">Aliexpress</string>
+    <string name="aliexpress">AliExpress</string>
     <string name="shopify">Shopify</string>
 
     <!-- Strings for notifications fragment-->
