@@ -16,7 +16,7 @@ class StoreData {
     //stores website links
     fun loadWebsites(): List<String> {
         return listOf(
-            "https://www.jumia.com/",
+            "https://www.jumia.com.ng/",
             "https://www.amazon.com/",
             "https://www.ebay.com/",
             "https://www.aliexpress.com/",
