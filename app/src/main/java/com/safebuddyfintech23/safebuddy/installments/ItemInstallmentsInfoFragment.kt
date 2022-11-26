@@ -1,4 +1,4 @@
-package com.safebuddyfintech23.safebuddy.start
+package com.safebuddyfintech23.safebuddy.installments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +8,15 @@ import android.view.ViewGroup
 import com.safebuddyfintech23.safebuddy.R
 
 /**
- * In this fragment; we introduce the user to the app.
- * The dependency to be used here is AppIntro : https://github.com/AppIntro/AppIntro
+ * Shows the information installments made on a particular item purchased by the user.
  */
-class OnBoardingFragment : Fragment() {
+class ItemInstallmentsInfoFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_on_boarding, container, false)
+        return inflater.inflate(R.layout.fragment_item_installments_info, container, false)
     }
 }
