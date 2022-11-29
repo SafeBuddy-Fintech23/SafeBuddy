@@ -1,4 +1,4 @@
-package com.safebuddyfintech23.safebuddy.home.stores
+package com.safebuddyfintech23.safebuddy.stores
 
 import com.safebuddyfintech23.safebuddy.R
 
