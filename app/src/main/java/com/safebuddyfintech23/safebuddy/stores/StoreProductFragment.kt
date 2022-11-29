@@ -14,6 +14,7 @@ import com.safebuddyfintech23.safebuddy.databinding.FragmentStoreProductBinding
 
 class StoreProductFragment : Fragment() {
 
+    private val viewModel: StoreProductViewModel by activityViewModels()
     private var _binding: FragmentStoreProductBinding? = null
     private val binding get() = _binding!!
 

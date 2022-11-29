@@ -24,6 +24,7 @@ class WebViewFragment : Fragment() {
     private lateinit var myWebView: WebView
     private lateinit var webUrl: String
     private lateinit var webTitle: String
+    private val viewModel: StoreProductViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +56,7 @@ class WebViewFragment : Fragment() {
 //            val data = productStr.split("<*>")
             val parsedData = parseStr(productStr)
             Log.d("js prod", "$parsedData")
+            viewModel.setProducts(parsedData)
             viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
 
             findNavController().navigate(R.id.action_webViewFragment_to_storeProductFragment)
