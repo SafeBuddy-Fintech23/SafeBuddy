@@ -17,6 +17,7 @@ class StoreProductFragment : Fragment() {
     private val viewModel: StoreProductViewModel by activityViewModels()
     private var _binding: FragmentStoreProductBinding? = null
     private val binding get() = _binding!!
+    private var storeProductsAdapter = StoreProductsAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +29,11 @@ class StoreProductFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.recyclerView.adapter = storeProductsAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        viewModel.products.observe(viewLifecycleOwner) {
+            storeProductsAdapter.submitList(it)
+        }
     }
 
     override fun onDestroyView() {
