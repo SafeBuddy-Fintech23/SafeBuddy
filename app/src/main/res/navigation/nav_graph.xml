@@ -35,7 +35,7 @@
         tools:layout="@layout/fragment_more" />
     <fragment
         android:id="@+id/storesFragment"
-        android:name="com.safebuddyfintech23.safebuddy.home.stores.StoresFragment"
+        android:name="com.safebuddyfintech23.safebuddy.stores.StoresFragment"
         android:label="@string/store"
         tools:layout="@layout/fragment_stores" >
         <action
@@ -66,7 +66,16 @@
         tools:layout="@layout/fragment_previous_installments" />
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="com.safebuddyfintech23.safebuddy.home.stores.WebViewFragment"
+        android:name="com.safebuddyfintech23.safebuddy.stores.WebViewFragment"
         android:label="fragment_web_view"
-        tools:layout="@layout/fragment_web_view" />
+        tools:layout="@layout/fragment_web_view" >
+        <action
+            android:id="@+id/action_webViewFragment_to_storeProductFragment"
+            app:destination="@id/storeProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeProductFragment"
+        android:name="com.safebuddyfintech23.safebuddy.stores.StoreProductFragment"
+        android:label="fragment_store_product"
+        tools:layout="@layout/fragment_store_product" />
 </navigation>

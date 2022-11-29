@@ -1,4 +1,4 @@
-package com.safebuddyfintech23.safebuddy.home.stores
+package com.safebuddyfintech23.safebuddy.stores
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -42,7 +42,7 @@ class StoresFragment : Fragment() {
         val storeTitles = StoreData().loadTitles()
 
         //itemClick
-        adapter.setOnItemClickListener(object : StoresAdapter.onItemClickListener{
+        adapter.setOnItemClickListener(object : StoresAdapter.onItemClickListener {
             override fun onItemClick(position: Int) { //do actions here when the user clicks a store
                 //get weblink position
                 val myUrl = storesWebsites[position]
