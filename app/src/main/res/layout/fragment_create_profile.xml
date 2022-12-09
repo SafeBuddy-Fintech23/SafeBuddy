@@ -1,44 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateProfileFragment">
+    tools:context=".userprofile.CreateProfileFragment">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <EditText
-        android:id="@+id/edit_txt_bank_id_create"
+        android:id="@+id/edit_txt_bank_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/bank_id"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#8D6E63"
-        app:layout_constraintEnd_toEndOf="@+id/edit_txt_first_name_create"
+        app:layout_constraintEnd_toEndOf="@+id/edit_txt_first_name"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edit_txt_first_name_create"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_second_name_create" />
+        app:layout_constraintStart_toStartOf="@+id/edit_txt_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_txt_last_name" />
 
     <EditText
-        android:id="@+id/edit_txt_second_name_create"
+        android:id="@+id/edit_txt_last_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/last_name"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textCapSentences"
         android:minHeight="48dp"
         android:textColorHint="#8D6E63"
-        app:layout_constraintEnd_toEndOf="@+id/edit_txt_first_name_create"
+        app:layout_constraintEnd_toEndOf="@+id/edit_txt_first_name"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edit_txt_first_name_create"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_first_name_create" />
+        app:layout_constraintStart_toStartOf="@+id/edit_txt_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_txt_first_name" />
+
+    <EditText
+        android:id="@+id/edit_txt_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/user_location"
+        android:importantForAutofill="no"
+        android:inputType="textCapSentences"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        app:layout_constraintEnd_toEndOf="@+id/edit_txt_first_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_txt_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_txt_bank_id" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -90,11 +109,12 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:contentDescription="@string/user_profile_picture"
+            android:scaleType="fitXY"
             android:src="@drawable/icon_dark" />
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt_set_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-2dp"
@@ -105,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView_profile_img" />
 
     <EditText
-        android:id="@+id/edit_txt_first_name_create"
+        android:id="@+id/edit_txt_first_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -114,36 +134,37 @@
         android:ems="10"
         android:hint="@string/first_name"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textCapSentences|textEmailAddress"
         android:minHeight="48dp"
         android:textColorHint="#8D6E63"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_set_profile" />
 
     <Button
         android:id="@+id/btn_continue_create"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/btn_continue"
-        app:icon="@drawable/ic_baseline_arrow_right_alt_24"
-        app:iconGravity="textEnd"
-        app:iconSize="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/edit_txt_second_name_create"
+        android:layout_marginTop="32dp"
+        android:text="@string/btn_save"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/edit_txt_last_name"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edit_txt_second_name_create"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_bank_id_create" />
+        app:layout_constraintStart_toStartOf="@+id/edit_txt_last_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_txt_location" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="40dp"
         android:text="@string/need_help_contact_our"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_notify_data_saved" />
 
     <TextView
         android:id="@+id/txt_customer_support"
@@ -155,6 +176,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/txt_notify_data_saved"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/profile_created"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_continue_create" />
 
 
     <!--    <com.google.android.material.textfield.TextInputLayout-->
@@ -180,3 +213,4 @@
 <!--            android:inputType="textPersonName|text" />-->
 <!--    </com.google.android.material.textfield.TextInputLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

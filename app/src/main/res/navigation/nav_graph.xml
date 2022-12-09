@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/createProfileFragment"
-        android:name="com.safebuddyfintech23.safebuddy.CreateProfileFragment"
+        android:name="com.safebuddyfintech23.safebuddy.userprofile.CreateProfileFragment"
         android:label="@string/create_profile_label"
         tools:layout="@layout/fragment_create_profile" />
     <fragment
