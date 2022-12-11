@@ -1,22 +1,28 @@
 package com.safebuddyfintech23.safebuddy.home
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
 import com.safebuddyfintech23.safebuddy.R
+import java.util.*
 
 /**
  * Installments get to be handled here.
  */
 
 class HomeFragment : Fragment() {
+    companion object {
+        private const val USERS = "USERS"
+    }
 
-    //lateinit my views
+    //late init my views
     private lateinit var userName: TextView
     private lateinit var dayORnightGreetings: TextView
     private lateinit var userProfileImage: ImageView
@@ -54,5 +60,36 @@ class HomeFragment : Fragment() {
         */
         upcomingRecentTxt = view.findViewById(R.id.txt_upcoming_recent_home)
         emptyActivityHolderImg = view.findViewById(R.id.img_empty_holder_home)
+
+        //Setting up the user name
+        val defaultName = FirebaseAuth.getInstance().currentUser?.displayName.toString()
+        val sharedPreferences =
+            requireActivity().applicationContext.getSharedPreferences("local", Context.MODE_PRIVATE)
+        userName.text = sharedPreferences.getString("name1SavedInRealTime_DB", defaultName)
+
+        //Setting greeting message
+        val currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+        if (currentHour < 12) {
+            dayORnightGreetings.text = getString(R.string.good_morning)
+        } else if (currentHour in 12..15) {
+            dayORnightGreetings.text = getString(R.string.good_afternoon)
+        } else {
+            dayORnightGreetings.text = getString(R.string.good_evening)
+        }
+
+
+
+//        if (isProfileCreated(requireActivity())) {
+//            //do something if user created profile.
+//        }
+//
+//        //get user data from db
+//        val userNodeInDB = FirebaseAuth.getInstance().currentUser?.displayName.toString()
+//        val database = FirebaseDatabase.getInstance().getReference(USERS)
+//        database.child(userNodeInDB).get().addOnSuccessListener {
+//            if (it.exists()) {
+//                //get user data from firebase realtime database
+//            }
+//        }
     }
 }
