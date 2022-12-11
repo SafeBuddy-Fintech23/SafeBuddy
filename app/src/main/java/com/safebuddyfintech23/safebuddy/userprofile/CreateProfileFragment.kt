@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -32,8 +33,9 @@ class CreateProfileFragment : Fragment() {
     private lateinit var btnSave: Button
     private lateinit var dataSavedTxt: TextView
     private lateinit var customerSupportTxt: TextView
+    private lateinit var progressBar: ProgressBar
 
-    private lateinit var imageUri: Uri
+    private var imageUri: Uri? = null
 
 
     override fun onCreateView(
@@ -56,6 +58,10 @@ class CreateProfileFragment : Fragment() {
         btnSave = view.findViewById(R.id.btn_continue_create)
         dataSavedTxt = view.findViewById(R.id.txt_notify_data_saved)
         customerSupportTxt = view.findViewById(R.id.txt_customer_support)
+        progressBar = view.findViewById(R.id.progress_bar_create_profile)
+
+        progressBar.isEnabled = false
+        progressBar.visibility = View.GONE
 
         dataSavedTxt.visibility = View.GONE
         //Getting Profile Pic
@@ -76,8 +82,11 @@ class CreateProfileFragment : Fragment() {
             Toast.makeText(requireContext(), getString(R.string.plz_wait), Toast.LENGTH_LONG).show()
 
             //Check if User Data is valid
+            if (imageUri == null) {
+                Toast.makeText(requireContext(), getString(R.string.err_no_image), Toast.LENGTH_LONG).show()
+            }
             //Raise errors where necessary if any field is empty
-            if (firstNameEdtTxt.text.isEmpty()) {
+            else if (firstNameEdtTxt.text.isEmpty()) {
                 firstNameEdtTxt.error = getString(R.string.err_firstname)
             } else if (lastNameEdtTxt.text.isEmpty()) {
                 lastNameEdtTxt.error = getString(R.string.err_lastname)
@@ -91,6 +100,10 @@ class CreateProfileFragment : Fragment() {
                 inputLastName = lastNameEdtTxt.text.toString()
                 inputBankID = bankIdEdtTxt.text.toString()
                 inputUserLocation = locationEdtTxt.text.toString()
+
+
+                progressBar.isEnabled = true
+                progressBar.visibility = View.VISIBLE
 
                 //then upload it
                 uploadUserData(
@@ -136,7 +149,7 @@ class CreateProfileFragment : Fragment() {
     //Uploads user data to Firebase Database
     private fun uploadUserData(
         context: Context,
-        uri: Uri,
+        uri: Uri?,
         firstName: String,
         lastName: String,
         bankID: String,
@@ -148,55 +161,78 @@ class CreateProfileFragment : Fragment() {
         // First, upload the image to Firebase Storage
         val storageReference = FirebaseStorage.getInstance().getReference(PROFILE_PICS)
         //store the image then get its downloadURL, using [.addOnSuccessListener]
-        storageReference.putFile(uri).addOnSuccessListener(requireActivity()) {
+        if (uri != null) {
+            storageReference.putFile(uri).addOnSuccessListener(requireActivity()) {
 
-            //get downloadURL from metadata,  then addOnSuccessListener to save the downloadURL
-            //to the database
-                taskSnapshot ->
-            taskSnapshot.metadata!!.reference!!.downloadUrl.addOnSuccessListener { downloadURL ->
+                //get downloadURL from metadata,  then addOnSuccessListener to save the downloadURL
+                //to the database
+                    taskSnapshot ->
+                taskSnapshot.metadata!!.reference!!.downloadUrl.addOnSuccessListener { downloadURL ->
 
-                //save input to the database
-                val user = User(
-                    downloadURL.toString(), firstName, lastName, bankID, location
-                )
+                    //save input to the database
+                    val user = User(
+                        downloadURL.toString(), firstName, lastName, bankID, location
+                    )
 
-                //ref for the database
-                val database = FirebaseDatabase.getInstance().getReference(USERS)
+                    //ref for the database
+                    val database = FirebaseDatabase.getInstance().getReference(USERS)
 
-                //Create a node to the database for the user
-                val userNodeInDB = firstName + lastName
+                    //Create a node to the database for the user
+                    val userNodeInDB = firstName + lastName
 
-                //now we input to the database
-                database.child(userNodeInDB).setValue(user).addOnSuccessListener {
-                    // After the data has been uploaded; additional activities to be done here
+                    //now we input to the database
+                    database.child(userNodeInDB).setValue(user).addOnSuccessListener {
+                        // After the data has been uploaded; additional activities to be done here
 
-                    // Notify the user that the profile has been created
-                    profileImgView.isClickable = false
-                    setProfileTxt.isClickable = false
-                    firstNameEdtTxt.isEnabled = false
-                    lastNameEdtTxt.isEnabled = false
-                    bankIdEdtTxt.isEnabled = false
-                    locationEdtTxt.isEnabled = false
+                        // Notify the user that the profile has been created
+                        profileImgView.isClickable = false
+                        setProfileTxt.isClickable = false
+                        firstNameEdtTxt.isEnabled = false
+                        lastNameEdtTxt.isEnabled = false
+                        bankIdEdtTxt.isEnabled = false
+                        locationEdtTxt.isEnabled = false
 
-                    btnSave.setOnClickListener {
-                        Toast.makeText(
-                            context, getString(R.string.profile_saved), Toast.LENGTH_SHORT
-                        ).show()
+                        progressBar.isEnabled = false
+                        progressBar.visibility = View.GONE
+
+                        btnSave.setOnClickListener {
+                            Toast.makeText(
+                                context, getString(R.string.profile_saved), Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        dataSavedTxt.visibility = View.VISIBLE
+
+
+                        // ToDo: Change the views at the profile fragment, with reference to a shared pref*
+                        val sharedPref =
+                            requireActivity().applicationContext.getSharedPreferences("local", Context.MODE_PRIVATE)
+                        val editor = sharedPref.edit()
+                        editor?.apply{
+                            putBoolean("isProfileCreated", true)
+                            putString("name1SavedInRealTime_DB", firstName)
+                            apply()
+                        }
                     }
-                    dataSavedTxt.visibility = View.VISIBLE
-
-
-                    // ToDo: Change the views at the profile fragment, with reference to a shared pref*
                 }
-            }
-        }.addOnFailureListener {
-            //if the WHOLE process of uploading data fails, notify the user
-            Toast.makeText(
-                context, getString(R.string.profile_not_saved), Toast.LENGTH_SHORT
-            ).show()
-            dataSavedTxt.text = getString(R.string.profile_not_created)
-            dataSavedTxt.visibility = View.VISIBLE
+            }.addOnFailureListener {
+                //if the WHOLE process of uploading data fails, notify the user
+                Toast.makeText(
+                    context, getString(R.string.profile_not_saved), Toast.LENGTH_SHORT
+                ).show()
+                dataSavedTxt.text = getString(R.string.profile_not_created)
+                dataSavedTxt.visibility = View.VISIBLE
 
+                progressBar.isEnabled = false
+                progressBar.visibility = View.GONE
+
+            }
         }
     }
+}
+
+
+fun isProfileCreated(reqActivity: FragmentActivity): Boolean {
+    val sharedPreferences =
+        reqActivity.applicationContext.getSharedPreferences("local", Context.MODE_PRIVATE)
+    return sharedPreferences.getBoolean("isProfileCreated", false)
 }
