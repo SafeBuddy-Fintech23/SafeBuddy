@@ -30,12 +30,15 @@ class CreateProfileFragment : Fragment() {
     private lateinit var lastNameEdtTxt: EditText
     private lateinit var bankIdEdtTxt: EditText
     private lateinit var locationEdtTxt: EditText
+    private lateinit var socialMediaAcc: Spinner
+    private lateinit var socialMedNameEdtTxt: EditText
     private lateinit var btnSave: Button
     private lateinit var dataSavedTxt: TextView
     private lateinit var customerSupportTxt: TextView
     private lateinit var progressBar: ProgressBar
 
     private var imageUri: Uri? = null
+    private var socAccType: String? = null
 
 
     override fun onCreateView(
@@ -55,6 +58,8 @@ class CreateProfileFragment : Fragment() {
         lastNameEdtTxt = view.findViewById(R.id.edit_txt_last_name)
         bankIdEdtTxt = view.findViewById(R.id.edit_txt_bank_id)
         locationEdtTxt = view.findViewById(R.id.edit_txt_location)
+        socialMediaAcc = view.findViewById(R.id.spinner_soc_media)
+        socialMedNameEdtTxt = view.findViewById(R.id.edit_txt_soc_name)
         btnSave = view.findViewById(R.id.btn_continue_create)
         dataSavedTxt = view.findViewById(R.id.txt_notify_data_saved)
         customerSupportTxt = view.findViewById(R.id.txt_customer_support)
@@ -75,6 +80,15 @@ class CreateProfileFragment : Fragment() {
         var inputLastName: String?
         var inputBankID: String?
         var inputUserLocation: String?
+        var socAccName: String?
+
+        //Check selected social media account user name
+//        val socialMediaAccounts = resources.getStringArray(R.array.soc_media_accounts)
+//        val spinnerText = android.R.layout.simple_spinner_dropdown_item
+//        val adapter = ArrayAdapter(
+//            requireContext(), spinnerText, socialMediaAccounts
+//        )
+//        socialMediaAcc.adapter = adapter
 
         //Saving User Data
         btnSave.setOnClickListener {
@@ -83,8 +97,11 @@ class CreateProfileFragment : Fragment() {
 
             //Check if User Data is valid
             if (imageUri == null) {
-                Toast.makeText(requireContext(), getString(R.string.err_no_image), Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    requireContext(), getString(R.string.err_no_image), Toast.LENGTH_SHORT
+                ).show()
             }
+
             //Raise errors where necessary if any field is empty
             else if (firstNameEdtTxt.text.isEmpty()) {
                 firstNameEdtTxt.error = getString(R.string.err_firstname)
@@ -94,12 +111,20 @@ class CreateProfileFragment : Fragment() {
                 bankIdEdtTxt.error = getString(R.string.err_bank_id)
             } else if (locationEdtTxt.text.isEmpty()) {
                 locationEdtTxt.error = getString(R.string.err_user_location)
+            } else if (socAccType == getString(R.string.select_soc_med_acc)) {
+                Toast.makeText(
+                    requireContext(), getString(R.string.err_no_soc_acc_type), Toast.LENGTH_LONG
+                ).show()
+            } else if (socialMedNameEdtTxt.text.isEmpty()) {
+                socialMedNameEdtTxt.error = getString(R.string.err_no_soc_acc_name)
             } else {
                 //input data
                 inputFirstName = firstNameEdtTxt.text.toString()
                 inputLastName = lastNameEdtTxt.text.toString()
                 inputBankID = bankIdEdtTxt.text.toString()
                 inputUserLocation = locationEdtTxt.text.toString()
+                socAccType = socialMediaAcc.selectedItem.toString()
+                socAccName = socialMedNameEdtTxt.text.toString()
 
 
                 progressBar.isEnabled = true
@@ -112,7 +137,10 @@ class CreateProfileFragment : Fragment() {
                     inputFirstName!!,
                     inputLastName!!,
                     inputBankID!!,
-                    inputUserLocation!!
+                    inputUserLocation!!,
+                    socAccType!!,
+                    socAccName!!
+
                 )
 
             }
@@ -154,6 +182,8 @@ class CreateProfileFragment : Fragment() {
         lastName: String,
         bankID: String,
         location: String,
+        socialMediaType: String,
+        socialMediaName: String
     ) { //if [CurrentUserName] is "null", set it to [firstName]+[lastName]
         //this is because when user signs in using phone, [CurrentUserName] will be "null"
         if (CurrentUserName == "null") PROFILE_PICS = firstName + lastName
@@ -171,7 +201,13 @@ class CreateProfileFragment : Fragment() {
 
                     //save input to the database
                     val user = User(
-                        downloadURL.toString(), firstName, lastName, bankID, location
+                        downloadURL.toString(),
+                        firstName,
+                        lastName,
+                        bankID,
+                        location,
+                        socialMediaType,
+                        socialMediaName
                     )
 
                     //ref for the database
@@ -191,6 +227,8 @@ class CreateProfileFragment : Fragment() {
                         lastNameEdtTxt.isEnabled = false
                         bankIdEdtTxt.isEnabled = false
                         locationEdtTxt.isEnabled = false
+                        socialMediaAcc.isEnabled = false
+                        socialMedNameEdtTxt.isEnabled = false
 
                         progressBar.isEnabled = false
                         progressBar.visibility = View.GONE
@@ -204,10 +242,11 @@ class CreateProfileFragment : Fragment() {
 
 
                         // ToDo: Change the views at the profile fragment, with reference to a shared pref*
-                        val sharedPref =
-                            requireActivity().applicationContext.getSharedPreferences("local", Context.MODE_PRIVATE)
+                        val sharedPref = requireActivity().applicationContext.getSharedPreferences(
+                            "local", Context.MODE_PRIVATE
+                        )
                         val editor = sharedPref.edit()
-                        editor?.apply{
+                        editor?.apply {
                             putBoolean("isProfileCreated", true)
                             putString("name1SavedInRealTime_DB", firstName)
                             apply()
@@ -221,10 +260,8 @@ class CreateProfileFragment : Fragment() {
                 ).show()
                 dataSavedTxt.text = getString(R.string.profile_not_created)
                 dataSavedTxt.visibility = View.VISIBLE
-
                 progressBar.isEnabled = false
                 progressBar.visibility = View.GONE
-
             }
         }
     }

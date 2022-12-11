@@ -9,6 +9,8 @@ class User {
     var lastName: String? = null
     var bankID: String? = null
     var location: String? = null
+    var socialMediaAccType: String? = null
+    var socialMediaAccName: String? = null
 
     // Empty constructor to be used for serialization
     constructor()
@@ -18,12 +20,16 @@ class User {
         firstName: String?,
         lastName: String?,
         bankID: String?,
-        location: String?
+        location: String?,
+        socialMediaAccType: String?,
+        socialMediaAccName: String?
     ) {
         this.profileUrl = profileUrl
         this.firstName = firstName
         this.lastName = lastName
         this.bankID = bankID
         this.location = location
+        this.socialMediaAccType = socialMediaAccType
+        this.socialMediaAccName = socialMediaAccName
     }
 }

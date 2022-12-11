@@ -35,7 +35,6 @@
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapSentences"
             android:minHeight="48dp"
-            android:textColorHint="#8D6E63"
             app:layout_constraintEnd_toEndOf="@+id/edit_txt_first_name"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/edit_txt_first_name"
@@ -56,28 +55,16 @@
             app:layout_constraintStart_toStartOf="@+id/edit_txt_first_name"
             app:layout_constraintTop_toBottomOf="@+id/edit_txt_bank_id" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:contentDescription="@string/buy_now_pay_later"
-            android:scaleType="fitXY"
-            android:src="@drawable/img_bnpl"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
             android:text="@string/welcome"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
         <TextView
             android:id="@+id/textView2"
@@ -133,23 +120,39 @@
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapSentences|textEmailAddress"
             android:minHeight="48dp"
-            android:textColorHint="#8D6E63"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_set_profile" />
+
+        <EditText
+            android:id="@+id/edit_txt_soc_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="@string/soc_media_user_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName|textCapSentences|textEmailAddress"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_soc_media" />
 
         <Button
             android:id="@+id/btn_continue_create"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:text="@string/btn_save"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/edit_txt_last_name"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/edit_txt_last_name"
-            app:layout_constraintTop_toBottomOf="@+id/edit_txt_location" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_txt_soc_name" />
 
         <TextView
             android:id="@+id/textView4"
@@ -194,6 +197,33 @@
             android:elevation="16dp"
             android:indeterminate="true"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner_soc_media"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:entries="@array/soc_media_accounts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_txt_location" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:fontFamily="@font/pacifico"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
