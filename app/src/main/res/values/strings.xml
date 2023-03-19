@@ -24,10 +24,37 @@
     <string name="user_profile_picture">User profile picture</string>
     <string name="set_profile_picture">Set profile picture</string>
     <string name="last_name">Last Name</string>
-    <string name="btn_continue">Continue</string>
+    <string name="user_location">Location</string>
+    <string name="btn_save">Save</string>
     <string name="need_help_contact_our">Need help? Contact our</string>
     <string name="customer_support">Customer Support</string>
     <string name="bank_id">Bank ID</string>
+    <string name="profile_saved">Your profile has been successfully saved.</string>
+    <string name="profile_created">Your profile has been created. Go to back to the home screen and enjoy our services.</string>
+    <string name="profile_not_saved">Profile not saved.</string>
+    <string name="profile_not_created">Sorry. Your profile has not created. Ensure you are well connected to the internet and try again. Contact customer support for help.</string>
+    <string name="plz_wait">Please wait…</string>
+    <string name="select_soc_acc">Select social media account type :</string>
+    <string name="enter_name_soc_acc">Enter your user name:</string>
+    <string name="soc_media_user_name">Account User Name</string>
+    <string name="select_soc_med_acc">Select social media account</string> <!--This has been used
+    to CHECK for selected social media account TYPE-->
+
+    <string-array name="soc_media_accounts">
+        <item>Select social media account</item>
+        <item>Facebook</item>
+        <item>Instagram</item>
+        <item>Twitter</item>
+    </string-array>
+
+    <!-- Error text to raise when Saving user data-->
+    <string name="err_firstname">Enter your first name</string>
+    <string name="err_lastname">Enter your last name</string>
+    <string name="err_bank_id">Enter your bank ID</string>
+    <string name="err_user_location">Enter your location</string>
+    <string name="err_no_image">Please select your profile picture</string>
+    <string name="err_no_soc_acc_type">Select your social media account</string>
+    <string name="err_no_soc_acc_name">Please enter your user name</string>
 
     <!-- Strings used for home fragment-->
     <string name="hello">Hello, </string>
@@ -61,7 +88,7 @@
     <string name="jumia">Jumia</string>
     <string name="amazon">Amazon</string>
     <string name="ebay">eBay</string>
-    <string name="aliexpress">Aliexpress</string>
+    <string name="aliexpress">AliExpress</string>
     <string name="shopify">Shopify</string>
 
     <!-- Strings for notifications fragment-->
