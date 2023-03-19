@@ -14,9 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SafeBuddy"
-        tools:targetApi="31">
+        tools:targetApi="33">
+        <!--NOTE:
+        To implement the SplashScreen:
+        I have made the LoginActivity as the first one, because it extends the AppCompatActivity()
+        The OnBoardingActivity extends AppIntro2(), hence not compatible when installing the SplashScreen
+        -->
         <activity
-            android:name=".start.OnBoardingActivity"
+            android:name=".start.LoginActivity"
+            android:theme="@style/Theme.App.Starting"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +34,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".start.LoginActivity"
+            android:name=".start.OnBoardingActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

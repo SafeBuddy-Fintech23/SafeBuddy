@@ -1,17 +1,15 @@
 package com.safebuddyfintech23.safebuddy.stores
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.safebuddyfintech23.safebuddy.R
-import com.safebuddyfintech23.safebuddy.databinding.FragmentStoreProductBinding
 import com.safebuddyfintech23.safebuddy.databinding.StoreProductDescriptionCardBinding
 import com.safebuddyfintech23.safebuddy.stores.StoreProductsAdapter.ProductViewHolder
 
