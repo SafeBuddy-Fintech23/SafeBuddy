@@ -29,7 +29,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         //start SplashScreen on create
+        Thread.sleep(3000) //splash screen duration 3 seconds
         installSplashScreen()
+
+
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
